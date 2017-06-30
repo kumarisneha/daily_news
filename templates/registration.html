@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registration Page</title>
+  <style type="text/css">
+    .redtext{
+  color: red;
+
+
+}
+  </style>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/static/custom.css" type="text/css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script> 
+</head>
+
+<body id="registration_bg">
+<div class="container">
+ 			<header>
+                <h1><strong>Registration Form</strong> </h1>	
+            </header>
+
+  <div class="row">
+  	<div class="col-md-4">
+          <form class="form-horizontal" action="/registration/" method="post">{% csrf_token %}
+
+          <fieldset>
+         
+            <div class="control-group">
+              <label class="control-label" for="email">{{form.email.label}}</label>
+              <div class="controls">
+                {{form.email}}
+                <p class="redtext"> <strong>{{form.email.errors.as_text}}</strong> </p>
+              </div>
+            </div>
+         
+            <div class="control-group">
+              <label class="control-label" for="password">{{form.password1.label}}</label>
+              <div class="controls">
+                {{form.password1}}
+                <p class="redtext"> <strong>{{form.password1.errors.as_text}}</strong> </p>
+              </div>
+            </div>  
+
+            <div class="control-group">
+              <label class="control-label" for="password">{{form.password2.label}}</label>
+              <div class="controls">
+                {{form.password2}}
+                <p class="redtext"> <strong>{{form.password2.errors.as_text}}</strong> </p>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="interest">{{form.interest.label}}</label>
+              <div class="controls">
+              {{form.interest}}
+                <p class="redtext"> <strong>{{form.interest.errors.as_text}}</strong> </p>
+              
+              </div>
+            </div>      
+            <br>        
+            <div class="control-group">
+              <!-- Button -->             
+                <button type="submit" name="submit" class="btn btn-success btn-md">Register</button>        
+                <a href="/login/"><button type="button" class="btn btn-info btn-md">Login</button></a> 
+            </div>
+          </fieldset>
+
+
+        </form>
+    
+    </div> 
+    
+  </div>
+  <br>
+   <p class="redtext"> <strong>{{text}}</strong> </p>
+</div>
+
+</body>
+</html>

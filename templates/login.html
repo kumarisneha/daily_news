@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login Page</title>
+  <style type="text/css">
+    .redtext {
+  color: red;
+
+}
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/custom.css" type="text/css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  
+</head>
+<body id="login_bg">
+
+<div class="container">
+
+  
+          <form class="form-horizontal" action="/login/" method="post">{% csrf_token %}
+           <header>
+            
+                <h1><strong>Login</strong></h1>  
+
+            </header>
+
+          <fieldset>
+           <div class="row">
+            <div class="col-md-4">
+            </div>
+            </div>
+
+            <div class="row">
+            
+                <div class="col-md-4">
+            <div class="control-group">
+              <label class="control-label" for="email">E-mail</label>
+              <div class="controls">
+                <input type="email" id="email" name="email" placeholder="Enter Email" class="form-control input-md">
+              </div>
+            
+            </div>
+         
+            <div class="control-group">
+              <label class="control-label" for="password">Password</label>
+              <div class="controls">
+                <input type="password" id="password" name="password" placeholder="Enter Password" class="form-control input-md">
+                <strong class="redtext">{{text}}</strong>
+              </div>
+            </div> <br>
+             </div>
+             </div>
+             <div class="row">
+             
+             <div class="col-md-4">
+               <div class="control-group">   
+                <button type="submit" class="btn btn-info btn-md btn-block">Login</button> 
+                </div>
+                </div>
+                </div>
+                <br>
+                <div class="row">
+               
+             <div class="col-md-4">
+                <a href="/registration/" style= "text-decoration: none;"><button type="button" class="btn btn-info btn-md btn-block">Sign up</button></a>   
+                </div>
+           </div>
+           </div>
+          </fieldset>
+          
+        </form>
+    </div>   
+</div>
+
+</body>
+</html>
